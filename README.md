@@ -11,4 +11,12 @@
 -- locally setup guide
 
 ## Contributors
--- Names of the contributors
+-- Front-End :
+1. Sneha Paul
+2. Rittima Biswas
+3. Aditya Roy Karmakar
+
+-- Back-End :
+1. Rajkumar Nilkant
+2. Soumyadip Bhattacharjya
+3. Saptarshi Biswas
