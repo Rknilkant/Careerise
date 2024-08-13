@@ -1,5 +1,6 @@
-backend/node_modules
-frontend/node_modules
+node_modules
 .vscode
 .zed
 .idea
+.data
+.DS_Store
