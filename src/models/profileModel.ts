@@ -1,21 +1,37 @@
-import mongoose, { Schema, Document } from 'mongoose';
+import mongoose, { Schema, Document } from "mongoose";
+import { User } from "./User";
 
-// Define the interface representing a document in MongoDB for Profile
-export interface IProfile extends Document {
-  name: string;              // The name of the mentor
-  bio: string;               // A short biography of the mentor
-  workplace: string;         // The current workplace of the mentor
-  techStacks: string[];      // An array of technologies the mentor is proficient in
+interface comments {
+	user: User; // User interface from 'models/User'
+	comment: string;
+	date: Date;
+}
+export interface Profile extends Document {
+	userName: string;
+	email: string;
+	profilePhoto: string;
+	bio: string;
+	workplace: string;
+	techStacks: string[];
+	rating: number;
+	testimonials: comments[];
+	numOfStudentsMentored: number;
+	workplaceVerified: boolean;
+	memberSince: Date;
 }
 
-// Create a Schema corresponding to the document interface.
 const ProfileSchema: Schema = new Schema({
-  name: { type: String, required: true },             // Name field, required
-  bio: { type: String, required: true },              // Bio field, required
-  workplace: { type: String, required: true },        // Workplace field, required
-  techStacks: { type: [String], required: true },     // Tech stacks field, required, stores an array of strings
+	userName: { type: String, require: true, unique: true },
+	profilePhoto: { type: String },
+	bio: { type: String, require: true },
+	workplace: { type: String },
+	techStacks: { type: [String] },
+	rating: { type: Number },
+	testimonials: { type: [Comment] },
+	numOfStudentsMentored: { type: Number },
+	workplaceVerified: { type: Boolean },
+	memberSince: { type: Date, default: Date.now() },
 });
 
-// Create and export the Profile model from the Schema defined above
-const Profile = mongoose.model<IProfile>('Profile', ProfileSchema);
-export default Profile;
+const ProfileModel = mongoose.model<Profile>("Profile", ProfileSchema);
+export default ProfileModel;

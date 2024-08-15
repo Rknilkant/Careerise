@@ -11,6 +11,8 @@
 -- locally setup guide
 
 ## Contributors
+
+> *Frontend of Careerise: [link](https://github.com/rittima/CarrerRise_Frontend)*
 -- Front-End :
 1. Sneha Paul
 2. Rittima Biswas
