@@ -1,17 +1,11 @@
 {
   "compilerOptions": {
-    "moduleResolution": "node", // Use Node.js module resolution strategy for finding modules
-    "esModuleInterop": true, // Enables default imports and compatibility with CommonJS modules
-    "resolveJsonModule": true, // Allows importing JSON files as modules
-    "isolatedModules": true, // Treats each file as an isolated module (useful for Babel or similar tools)
-    "strict": true, // Enables all strict type-checking options for better code quality
-    "skipLibCheck": true, // Skips type checking for declaration files, which can speed up compilation
-    "noImplicitAny": false, // If true, TypeScript will throw errors for variables implicitly of type 'any'
-    "baseUrl": "./src", // Base directory for resolving non-relative module imports (adjust if needed)
-    "paths": {
-      "*": ["node_modules/*", "src/types/*"] // Maps module names to specific directories (e.g., custom types or modules)
-    }
+    "outDir": "./dist",
+    "module": "commonjs",
+    "target": "es6",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
   },
-  "include": ["src/**/*.ts"], // Specifies which files to include in the compilation (all .ts files under src)
-  "exclude": ["node_modules"] // Specifies which files to exclude from the compilation (node_modules folder)
+  "include": ["src/**/*.ts"]
 }
