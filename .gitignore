@@ -1,0 +1,4 @@
+.editorconfig
+vendor
+views/node_modules
+temp/sql_scripts
